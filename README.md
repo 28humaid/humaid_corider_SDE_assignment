@@ -6,8 +6,9 @@
   - Flask-PyMongo
   - MongoDB
 -Clone this repository to your local machine:
-
+  - git@github.com:28humaid/humaid_corider_SDE_assignment.git
 -Change to the project directory:
-  - cd your-flask-mongodb-app
--install the required Python dependencies:
+  - cd humaid_corider_SDE_assignment
+    
+-Install the required Python dependencies:
   - pip install -r requirements.txt
