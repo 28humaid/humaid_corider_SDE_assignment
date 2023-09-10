@@ -1,9 +1,10 @@
 FROM python:3.9
 
-WORKDIR /app
+WORKDIR /humaid_corider_SDE_assignment
 
 COPY app.py .
 COPY requirements.txt .
+COPY api_end_points/ ./api_end_points/
 
 RUN pip install -r requirements.txt
 
