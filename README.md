@@ -8,7 +8,7 @@
   - MongoDB
     
 -Clone this repository to your local machine:
-  - git@github.com:28humaid/humaid_corider_SDE_assignment.git
+  - https://github.com/28humaid/humaid_corider_SDE_assignment.git
     
 -Change to the project directory:
   - cd humaid_corider_SDE_assignment
