@@ -4,6 +4,8 @@ from flask import Flask
 #python library to interact with MongoDB
 from flask_pymongo import PyMongo
 
+from flask_restful import fields
+
 from api_end_points.readAll import readAll
 from api_end_points.createUser import createUser
 from api_end_points.readOne import readOne
@@ -17,6 +19,13 @@ app.secret_key="secretkey"
 #connecting database
 app.config['MONGO_URI']="mongodb://localhost:27017/user_db"
 mongo=PyMongo(app)
+
+resource_fields ={
+    'id':fields.String,
+    'name':fields.String,
+    'email':fields.String,
+    'password':fields.String
+}
 
 #Creates a new user with the specified data.
 app.register_blueprint(createUser)

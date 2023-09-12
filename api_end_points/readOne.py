@@ -1,5 +1,5 @@
-from flask import Blueprint
-
+from flask import Blueprint,jsonify
+from flask_restful import Resource,Api
 #importing bson library, in order to convert bson into json
 from bson.json_util import dumps
 
@@ -7,9 +7,16 @@ from bson.json_util import dumps
 from bson.objectid import ObjectId
 
 readOne=Blueprint('readOne',__name__)
-@readOne.route('/users/<id>', methods=['GET'])
-def display_oneUser(id):
-    from app import mongo
-    user=mongo.db.user_collection.find_one({'_id':ObjectId(id)})
-    resp=dumps(user)
-    return resp
+api=Api(readOne)
+
+class ReadOne(Resource):
+    def get(self,id):
+        from app import mongo
+        if mongo.db.user_collection.find_one({'_id':ObjectId(id)}):
+            user=mongo.db.user_collection.find_one({'_id':ObjectId(id)})
+            resp=dumps(user)
+            return resp
+        else:
+            return jsonify('user NOT found')        
+
+api.add_resource(ReadOne,'/users/<string:id>')
