@@ -1,4 +1,4 @@
-# humaid_corider_SDE_assignment
+# Flask application that performs CRUD operations on a MongoDB database for a User resource using REST API.
 -This application is designed for managing user data. It provides various API endpoints for creating, reading, updating, and deleting user records. The application is built using Flask, a Python web framework, and uses Flask-PyMongo for interacting with MongoDB, the database backend.
 
 -Before running this Flask application, you need to have the following prerequisites installed:
